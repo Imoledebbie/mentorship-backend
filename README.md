@@ -14,3 +14,12 @@ Coming soon...
 - Book Mentorship Sessions
 - Admin Dashboard to View All Sessions
 - Fully Functional Frontend & Backend
+
+## 🛠️ Tech Stack
+
+| Area      | Technology                |
+|-----------|---------------------------|
+| Frontend  | React, TypeScript         |
+| Backend   | Node.js, Express, TypeScript |
+| Database  | MongoDB (Mongoose)        |
+| Auth      | JSON Web Tokens (JWT)     |
