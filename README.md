@@ -23,3 +23,11 @@ Coming soon...
 | Backend   | Node.js, Express, TypeScript |
 | Database  | MongoDB (Mongoose)        |
 | Auth      | JSON Web Tokens (JWT)     |
+
+## 💻 How to Run the App Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Imoledebbie/mentorship-backend.git
+cd mentorship-backend
