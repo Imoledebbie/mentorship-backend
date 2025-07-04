@@ -19,7 +19,7 @@ Coming soon...
 
 | Area      | Technology                |
 |-----------|---------------------------|
-| Frontend  | React, TypeScript         |
+| Frontend  | React (Create React App), TypeScript |
 | Backend   | Node.js, Express, TypeScript |
 | Database  | MongoDB (Mongoose)        |
 | Auth      | JSON Web Tokens (JWT)     |
@@ -39,8 +39,8 @@ npm run dev
 # The backend will run at: http://localhost:5000
 
 # 3. Start the Frontend (in a new terminal)
-cd mentorship-frontend
+cd Backend/mentorship-frontend
 npm install
-npm run dev
+npm start
 
-# The frontend will run at: http://localhost:5173
+# The frontend will run at: http://localhost:3000
