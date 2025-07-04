@@ -31,11 +31,4 @@ Coming soon...
 ```bash
 git clone https://github.com/Imoledebbie/mentorship-backend.git
 cd mentorship-backend
----
 
-### 2. Start the Backend
-
-```bash
-cd Backend
-npm install
-npm run dev
