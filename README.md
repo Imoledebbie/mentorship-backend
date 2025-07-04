@@ -26,9 +26,21 @@ Coming soon...
 
 ## 💻 How to Run the App Locally
 
-### 1. Clone the Repository
-
 ```bash
+# 1. Clone the repository
 git clone https://github.com/Imoledebbie/mentorship-backend.git
 cd mentorship-backend
 
+# 2. Start the Backend
+cd Backend
+npm install
+npm run dev
+
+# The backend will run at: http://localhost:5000
+
+# 3. Start the Frontend (in a new terminal)
+cd mentorship-frontend
+npm install
+npm run dev
+
+# The frontend will run at: http://localhost:5173
