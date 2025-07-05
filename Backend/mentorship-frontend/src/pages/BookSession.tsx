@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { API_BASE_URL } from '../config';
 
 interface Mentor {
   _id: string;
@@ -24,7 +25,7 @@ const BookSession = () => {
   useEffect(() => {
     const fetchMentors = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/mentors');
+        const res = await axios.get('${API_BASE_URL}/api/mentors');
         setMentors(res.data.mentors); // adjust if backend structure differs
       } catch (error) {
         console.error('❌ Failed to load mentors:', error);
@@ -42,7 +43,7 @@ const BookSession = () => {
       const token = localStorage.getItem('token');
 
       await axios.post(
-        'http://localhost:5000/api/sessions',
+        `${API_BASE_URL}/api/sessions/book`,
         {
           mentorId: selectedMentor,
           date,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
+import { API_BASE_URL } from '../config';
 
 interface DecodedToken {
   id: string;
@@ -69,7 +70,7 @@ const Dashboard = () => {
     const fetchSessions = async () => {
       try {
         if (!token) return;
-        const res = await fetch('http://localhost:5000/api/sessions', {
+        const res = await fetch(`${API_BASE_URL}/api/sessions`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

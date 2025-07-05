@@ -1,6 +1,7 @@
 // src/pages/SessionsList.tsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 interface User {
   _id: string;
@@ -35,7 +36,7 @@ const SessionsList = () => {
         const userData = JSON.parse(atob(token!.split('.')[1]));
         setUserRole(userData.role);
 
-        const res = await axios.get('http://localhost:5000/api/sessions', {
+        const res = await axios.get(`${API_BASE_URL}/api/sessions`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -56,7 +57,7 @@ const SessionsList = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/sessions/${sessionId}`,
+        `${API_BASE_URL}/api/sessions/${sessionId}`,
         { status },
         {
           headers: {

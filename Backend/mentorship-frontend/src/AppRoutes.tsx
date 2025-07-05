@@ -9,6 +9,8 @@ import Dashboard from './pages/Dashboard';
 import BookSession from './pages/BookSession'; 
 import SessionsList from './pages/SessionsList';
 import AdminSessions from './pages/AdminSessions'; 
+import SessionFeedback from './pages/SessionFeedback'; // ✅ Import the new page
+import SessionDetailPage from './pages/SessionDetailPage';
 
 const AppRoutes = () => {
   return (
@@ -19,9 +21,11 @@ const AppRoutes = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/book-session" element={<BookSession />} /> {/* ✅ NEW */}
+          <Route path="/book-session" element={<BookSession />} />
           <Route path="/sessions" element={<SessionsList />} />
           <Route path="/admin-sessions" element={<AdminSessions />} />
+          <Route path="/session/:sessionId/feedback" element={<SessionFeedback />} /> {/* ✅ NEW */}
+          <Route path="/session/:sessionId" element={<SessionDetailPage />} />
         </Routes>
       </div>
     </Router>

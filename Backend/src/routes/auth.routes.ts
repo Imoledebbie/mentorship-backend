@@ -5,6 +5,7 @@ import User from '../models/User';
 
 const router: Router = express.Router();
 
+// User Registration
 router.post('/register', async (req: Request, res: Response) => {
   try {
     const { name, email, password, role } = req.body;
@@ -29,6 +30,7 @@ router.post('/register', async (req: Request, res: Response) => {
   }
 });
 
+// User Login
 router.post('/login', async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
@@ -64,6 +66,31 @@ router.post('/login', async (req: Request, res: Response) => {
     });
   } catch (error) {
     res.status(500).json({ message: 'Server error', error });
+  }
+});
+
+// ✅ TEMP: Create an Admin User
+router.post('/create-admin', async (req: Request, res: Response) => {
+  try {
+    const existing = await User.findOne({ email: 'admin@example.com' });
+    if (existing) {
+      return res.status(400).json({ message: 'Admin already exists' });
+    }
+
+    const hashedPassword = await bcrypt.hash('AdminPass123', 10);
+
+    const admin = new User({
+      name: 'Admin User',
+      email: 'admin@example.com',
+      password: hashedPassword,
+      role: 'admin',
+    });
+
+    await admin.save();
+
+    res.status(201).json({ message: 'Admin user created successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error creating admin', error });
   }
 });
 

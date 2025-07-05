@@ -1,6 +1,7 @@
 // src/pages/AdminSessions.tsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 interface User {
   _id: string;
@@ -27,7 +28,7 @@ const AdminSessions = () => {
     const fetchSessions = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/sessions', {
+        const res = await axios.get(`${API_BASE_URL}/api/admin/sessions`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSessions(res.data.sessions);

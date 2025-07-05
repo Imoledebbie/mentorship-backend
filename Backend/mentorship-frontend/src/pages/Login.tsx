@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom'; // ✅ added useLocation
+import { API_BASE_URL } from '../config';
 
 const Login = () => {
   const location = useLocation(); // ✅ to read message passed from Dashboard
@@ -22,7 +23,7 @@ const Login = () => {
     try {
       console.log("Trying to login with:", email, password);
 
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post(`${API_BASE_URL}/api/auth/login`,  {
         email,
         password
       });
